@@ -1,0 +1,1 @@
+This repo contains BestCloud Academy training case files.
