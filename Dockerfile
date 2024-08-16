@@ -1,5 +1,5 @@
-# Python 3.11 tabanlı bir image kullan
-FROM python:3.11-slim
+# Python 3.10 tabanlı bir image kullan
+FROM python:3.10-slim
 
 # Çalışma dizinini ayarla
 WORKDIR /app
@@ -8,13 +8,10 @@ WORKDIR /app
 COPY requirements.txt requirements.txt
 
 # Gereksinimler dosyasındaki bağımlılıkları yükle
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install -r requirements.txt
 
 # Uygulama dosyalarını kopyala
 COPY . .
-
-# Uygulamanın dışarıya hangi portu dinleyeceğini belirt
-EXPOSE 5000
 
 # Uygulamayı başlat
 CMD ["python", "app.py"]
